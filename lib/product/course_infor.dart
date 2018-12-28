@@ -295,14 +295,12 @@ class _CourseInfoPageState extends State<CourseInfoPage>{
       client_child.apiToken=_token;
       return GraphqlProvider(
       client: client,
-        child: CacheProvider(
-          child: Scaffold(
-            appBar: AppBar(
-              title: Text('Course'),
-              backgroundColor: Colors.blue,
-            ),
-            body: _doSth()
-          )
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text('Course'),
+            backgroundColor: Colors.blue,
+          ),
+          body: _doSth()
         )
       );
     } 

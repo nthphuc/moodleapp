@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-//import './model/courses_repository.dart';
 import './product/course_card.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:jaguar_jwt/jaguar_jwt.dart';
 import 'dart:convert';
 
 class HomePage extends StatefulWidget{

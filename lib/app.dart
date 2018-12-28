@@ -39,22 +39,20 @@ class _StudentApp extends State<StudentApp>{
   Widget build(BuildContext context) {
     return GraphqlProvider(
       client: client,
-      child: CacheProvider(
-        child: MaterialApp(
-          title: 'Student App',
-          home: LoginPage(),
-          initialRoute: '/login',
-          routes: {
-            '/login': (BuildContext context) => LoginPage(),
-            '/profile': (BuildContext context) => ProfilePage(),
-            '/assignment': (BuildContext context) => AssignmentGradePage(),
-            '/midterm': (BuildContext context) => MidtermGradePage(),
-            '/final': (BuildContext context) => FinalGradePage(),
-            '/detail': (BuildContext context) => CourseInfoPage(),
-            '/home': (BuildContext context)=> HomePage()
-          },
-        ),    
-      )
+      child: MaterialApp(
+        title: 'Student App',
+        home: LoginPage(),
+        initialRoute: '/login',
+        routes: {
+          '/login': (BuildContext context) => LoginPage(),
+          '/profile': (BuildContext context) => ProfilePage(),
+          '/assignment': (BuildContext context) => AssignmentGradePage(),
+          '/midterm': (BuildContext context) => MidtermGradePage(),
+          '/final': (BuildContext context) => FinalGradePage(),
+          '/detail': (BuildContext context) => CourseInfoPage(),
+          '/home': (BuildContext context)=> HomePage()
+        },
+      ),    
     );
   } 
 }

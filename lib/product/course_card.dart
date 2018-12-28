@@ -137,75 +137,73 @@ class _CourseCard extends State<CourseCard>{
     if (_token!='') client_child.apiToken=_token;    
     return GraphqlProvider(
       client: client,
-      child: CacheProvider(
-        child: Padding(
-          padding: const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
-          child: Query(
-            COURSE_LIST,
-            pollInterval: 1,
-            builder: ({
-              bool loading,
-              Map data,
-              Exception error
-            })
-            {
-              if (error != null) {
-                return Text(error.toString());
-              }
-
-              if (loading) {
-                return Text('Loading');
-              }
-              if (_token!='') check();
-              courses=data["courses"];
-              return ListView.builder(
-                itemCount: courses.length,
-                itemBuilder: (context,index){
-                  return InkWell(
-                    onTap: ()=>restrictEnroll(index, courses[index]['Participants']),
-                    child: Card(
-                      elevation: 8.0,
-                      child: Padding(
+      child: Padding(
+        padding: const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
+        child: Query(
+          COURSE_LIST,
+          pollInterval: 1,
+          builder: ({
+            bool loading,
+            Map data,
+            Exception error
+          })
+          {
+            if (error != null) {
+              return Text(error.toString());
+            }
+            if (loading) {
+              return Text('Loading');
+            }
+            if (_token!='') check();
+            courses=data["courses"];
+            return ListView.builder(
+              itemCount: courses.length,
+              itemBuilder: (context,index){
+                return InkWell(
+                  onTap: ()=>restrictEnroll(index, courses[index]['Participants']),
+                  child: Card(
+                    elevation: 8.0,
+                    child: Padding(
                       padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 25.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text(
-                                  courses[index]['CourseName'],
-                                  style: TextStyle(
-                                      color: Colors.black87,
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.bold),
-                                  ),
-                                  SizedBox(
-                                    height: 10.0,
-                                  ),
-                                  Text(
-                                    courses[index]['CourseCode'],
-                                    style: TextStyle(
-                                      fontStyle: FontStyle.italic,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 25.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text(
+                                        courses[index]['CourseName'],
+                                        style: TextStyle(
+                                          color: Colors.black87,
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.bold),
+                                      ),
+                                      SizedBox(
+                                        height: 10.0,
+                                      ),
+                                      Text(
+                                        courses[index]['CourseCode'],
+                                        style: TextStyle(
+                                        fontStyle: FontStyle.italic,
+                                      ),
                                     ),
+                                  ],
+                                ),
+                              ),
+                              Row(
+                                children: <Widget>[
+                                  Text(
+                                    courses[index]['Semester'] + ', ',
+                                    style: TextStyle(color: Colors.black38),
+                                  ),  
+                                  Text(
+                                    courses[index]['Year'].toString(),
+                                    style: TextStyle(color: Colors.black38),
                                   ),
                                 ],
                               ),
-                            ),
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  courses[index]['Semester'] + ', ',
-                                  style: TextStyle(color: Colors.black38),
-                                ),  
-                                Text(
-                                  courses[index]['Year'].toString(),
-                                  style: TextStyle(color: Colors.black38),
-                                ),
-                              ],
-                            ),
                             checkEnroll(courses[index]['id'], courses[index]['Participants']),
                           ],
                         ),
@@ -217,7 +215,6 @@ class _CourseCard extends State<CourseCard>{
             }
           )
         )
-      )
     );
   }
 }

@@ -19,6 +19,7 @@ class _MidtermGradePage extends State<MidtermGradePage> {
   int state=0;
   String _token;
   int _index=0;
+  Timer timer;
   final TextEditingController inputGrade=new TextEditingController();
 
   static Client client_child = new Client(
@@ -78,7 +79,7 @@ class _MidtermGradePage extends State<MidtermGradePage> {
                   child: Text("Confirm"),
                   onPressed: (){
                     modifyGrade({'courseid':widget.courseid,'userid':widget.students[_index]['UserID'],'midterm':double.parse(inputGrade.text)});
-                    Timer timer=new Timer(const Duration(milliseconds: 1000),(){
+                    timer=new Timer(const Duration(milliseconds: 1000),(){
                       setState(() {
                         widget.students[_index]['Midterm']=double.parse(inputGrade.text);                                        
                       });
@@ -152,30 +153,30 @@ class _MidtermGradePage extends State<MidtermGradePage> {
   Widget build(BuildContext context) {
     if (_token!='') client_child.apiToken=_token;
     return  GraphqlProvider(
-      client: client,
-      child: CacheProvider(
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text('Midterm Grade'),
-            backgroundColor: Colors.black,
-          ),
-          body: GestureDetector(
-            onTap: (){
+    client: client,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Midterm Grade'),
+          backgroundColor: Colors.black,
+        ),
+        body: GestureDetector(
+          onTap: (){
+            timer=new Timer(const Duration(milliseconds: 1500),(){
               setState(() {
                 state=0;         
-              });
-            },
-            child: Column(
-              children: <Widget>[
-                Flexible(
-                  child:_buildMidtermGradeList(),
-                ),
-                inputGradeChange()
-              ],
-            ) 
-          )
+              });         
+            });
+          },
+          child: Column(
+            children: <Widget>[
+              Flexible(
+                child:_buildMidtermGradeList(),
+              ),
+              inputGradeChange()
+            ],
+          ) 
         )
-      ),
+      )
     );
   }
 }

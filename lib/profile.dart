@@ -194,7 +194,8 @@ class ProfilePageState extends State<ProfilePage> {
     if (_token.length==0){
       return Text('loading');
     }
-    else{
+    else
+    {
       client_child.apiToken=_token;
       if (_token!='') check();
       return GraphqlProvider(
@@ -208,21 +209,11 @@ class ProfilePageState extends State<ProfilePage> {
             ),
             body: Container(
               width: 500.0,
-              /*decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/profile_bg.jpg'),
-                  fit: BoxFit.cover,
-                ),
-              ),*/
               child: Padding(
                 padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
                 child: new Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    /*Text(
-                      'Boom',
-                      style: TextStyle(color: Colors.white, fontSize: 25.0),
-                    ),*/
                     Query(
                       USER_DETAIL,
                       variables: {"id": jsonDecode(c)['_id']},
