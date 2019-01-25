@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'grade.dart';
+=======
+import 'assignment.dart';
+import 'midterm.dart';
+import 'final.dart';
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
 import 'package:moodle3/queries.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -7,10 +13,18 @@ import 'studentslist.dart';
 
 class CourseInfoPage extends StatefulWidget{
   final String id;
+<<<<<<< HEAD
   List<Map<String,dynamic>> students;
 
   CourseInfoPage({
     this.id
+=======
+  final String userrole;
+  List<Map<String,dynamic>> students;
+
+  CourseInfoPage({
+    this.id, this.userrole
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
   });
 
   @override
@@ -42,11 +56,16 @@ class _CourseInfoPageState extends State<CourseInfoPage>{
           return Text('Loading');
         }
         courses=data["course"];
+<<<<<<< HEAD
         return Container(
+=======
+        return Padding(
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
           padding: const EdgeInsets.only(
           left: 10.0, right: 10.0, top: 20.0, bottom: 40.0),
           child: Card(
             clipBehavior: Clip.antiAlias,
+<<<<<<< HEAD
             shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
             elevation: 8.0,
             child: Column(
@@ -56,6 +75,21 @@ class _CourseInfoPageState extends State<CourseInfoPage>{
                 _buildCourseStudentInfo(),
                 _buildCourseGradeInfo()
               ],
+=======
+            shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+            elevation: 8.0,
+            child: ListView(
+              children: <Widget>[
+                new Column(
+                  children: <Widget>[
+                    _buildCourseBasicInfor(),
+                    _buildCourseStudentInfo(),
+                    _buildCourseGradeInfo()
+                  ],
+                ),
+              ]
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
             ),
           ),
         );
@@ -71,7 +105,11 @@ class _CourseInfoPageState extends State<CourseInfoPage>{
   }
 
   static Client client_child = new Client(
+<<<<<<< HEAD
       endPoint: 'https://frozen-badlands-80400.herokuapp.com/graphql',
+=======
+      endPoint: 'https://polar-chamber-46934.herokuapp.com/graphql',
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
       cache: InMemoryCache(),
       apiToken: '',
     );
@@ -84,6 +122,7 @@ class _CourseInfoPageState extends State<CourseInfoPage>{
   }
 
   _buildCourseBasicInfor(){
+<<<<<<< HEAD
     return Container(
       width: 380,
       decoration: BoxDecoration(
@@ -126,6 +165,42 @@ class _CourseInfoPageState extends State<CourseInfoPage>{
           ],
         ),
       ),
+=======
+    return new Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        Container(
+          height: 220,
+          width: 380,
+          decoration: BoxDecoration(
+            color: Colors.white,
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: new Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                new Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children:<Widget>[
+                    new Icon(Icons.import_contacts,color: Colors.blue, size: 40),
+                    new Container(
+                      padding: EdgeInsets.only(left: 15),
+                      child: new Text(courses["CourseCode"].toString(),style: new TextStyle(fontSize: 30.0, color: Colors.blue),textAlign: TextAlign.left,),
+                    )  
+                  ],
+                ),          
+                new Container(
+                  padding: EdgeInsets.only(top:10,bottom:10),
+                  child: new Text(courses["CourseName"].toString(),style: new TextStyle(fontSize: 25.0, color: Colors.blue)),
+                ),
+                /*new Text("Teacher: " + widget.teacherName,style: new TextStyle(fontSize: 20.0, color: Colors.black),)*/
+              ],
+            ),
+          ),
+        )
+      ],
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
     );
   }
 
@@ -187,6 +262,7 @@ class _CourseInfoPageState extends State<CourseInfoPage>{
   }
 
   _buildCourseGradeInfo(){
+<<<<<<< HEAD
     return new Column(
       children: <Widget>[
         new Container(
@@ -233,6 +309,103 @@ class _CourseInfoPageState extends State<CourseInfoPage>{
           ),
         ),
       ],
+=======
+      return Container(
+      width: 360.0,
+      height: 215.0,
+      decoration: BoxDecoration(color: Colors.white),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+        child: new Row(
+          children: <Widget>[
+            Text(
+              'Grade',
+              style: TextStyle(fontSize: 25.0),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 30.0),
+              child: new Container(
+                width: 5.0,
+                height: 190.0,
+                color: Colors.grey[200],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 40.0),
+              child: new Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Card(
+                    elevation: 3.0,
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 40,
+                      width: 150,
+                      child: InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context) => AssignmentGradePage(students: courses["Grades"],courseid: widget.id, userrole: widget.userrole)
+                          ));
+                        },
+                        child: Text(
+                          'Assignment',
+                          style: TextStyle(fontSize: 20.0, color: Colors.blue),
+                        ),
+                      ),
+                    )
+                  ),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  Card(
+                    elevation: 3.0,
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 40,
+                      width: 150,
+                      child: InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context) => MidtermGradePage(students: courses["Grades"],courseid: widget.id, userrole: widget.userrole)
+                          ));
+                        },
+                        child: Text(
+                          'Midterm',
+                          style: TextStyle(fontSize: 20.0, color: Colors.blue),
+                        ),
+                      ),
+                    )
+                  ),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  Card(
+                    elevation: 3.0,
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 40,
+                      width: 150,
+                      child: InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context) => FinalGradePage(students: courses["Grades"],courseid: widget.id, userrole: widget.userrole)
+                          ));
+                        },
+                        child: Text(
+                          'Final',
+                          style: TextStyle(fontSize: 20.0, color: Colors.blue),
+                        ),
+                      ),
+                    )
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
     );
   }
     

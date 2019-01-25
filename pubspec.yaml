@@ -18,8 +18,11 @@ dependencies:
   graphql_flutter: ^0.9.5
   shared_preferences: ^0.4.3
   jaguar_jwt: ^2.1.5
+<<<<<<< HEAD
   random_color: ^1.0.3
   charts_flutter: ^0.5.0
+=======
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

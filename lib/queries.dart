@@ -34,6 +34,7 @@ String COURSE_DETAIL="""
         FullName
         Email
       }
+<<<<<<< HEAD
       Teachers{
         FullName
       }
@@ -43,20 +44,36 @@ String COURSE_DETAIL="""
         Weight
         Max
         CourseID
+=======
+      Grades{
+        UserID
+        CourseID
+        StudentID
+        StudentName
+        Assignment
+        Midterm
+        Final
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
       }
     }
   } 
 """.replaceAll('\n', '');
 
 String UPDATE_USER="""
+<<<<<<< HEAD
   mutation UpdateUser(\$fullname: String, \$email: String, \$city: String, \$country: String, \$description: String){
     updateUser(fullname:\$fullname,email:\$email, city: \$city, country: \$country,description:\$description){
+=======
+  mutation UpdateUser(\$userid: String!, \$fullname: String!, \$email: String!, \$description: String!){
+    updateUser(userid:\$userid,fullname:\$fullname,email:\$email,description:\$description){
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
       UserID
     }
   }
 """.replaceAll('\n', '');
 
 String USER_DETAIL="""
+<<<<<<< HEAD
   query User{
     user{
       UserID
@@ -66,6 +83,14 @@ String USER_DETAIL="""
       Description
       City
       Country
+=======
+  query User(\$id: ID!){
+    user(id:\$id){
+      UserID
+      FullName   
+      Email
+      Description
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
     }
   }
 """.replaceAll('\n', '');
@@ -84,6 +109,7 @@ String MODIFY_GRADE="""
       CourseID
     }
   }
+<<<<<<< HEAD
 """.replaceAll('\n', '');
 
 String ADD_GRADE="""
@@ -124,4 +150,6 @@ String GRADE_LIST="""
       Feedback
     }
   }
+=======
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
 """.replaceAll('\n', '');
