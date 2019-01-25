@@ -58,7 +58,15 @@ class _CourseCard extends State<CourseCard>{
   }
 
   static Client client_child = new Client(
+<<<<<<< HEAD
       endPoint: 'https://frozen-badlands-80400.herokuapp.com/graphql',
+=======
+<<<<<<< HEAD
+      endPoint: 'https://frozen-badlands-80400.herokuapp.com/graphql',
+=======
+      endPoint: 'https://polar-chamber-46934.herokuapp.com/graphql',
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
       cache: InMemoryCache(),
       apiToken: '',
     );
@@ -89,7 +97,15 @@ class _CourseCard extends State<CourseCard>{
       }
       if (check==1){
         Navigator.push(context, MaterialPageRoute(
+<<<<<<< HEAD
                       builder: (context) => CourseInfoPage(id: courses[index]["id"])));
+=======
+<<<<<<< HEAD
+                      builder: (context) => CourseInfoPage(id: courses[index]["id"])));
+=======
+                      builder: (context) => CourseInfoPage(id: courses[index]["id"], userrole: jsonDecode(c)['role'])));
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
       }
     }
   }
@@ -122,6 +138,10 @@ class _CourseCard extends State<CourseCard>{
             if (loading) {
               return Text('Loading');
             }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
             return InkWell(
               child: Container(
                 margin: EdgeInsets.only(top: 10),
@@ -135,6 +155,14 @@ class _CourseCard extends State<CourseCard>{
               child: Text("Enroll", style:TextStyle(color: Colors.white)),
               ),
               onTap: ()=>enrollCourse({'courseid': courseid}),
+<<<<<<< HEAD
+=======
+=======
+            return RaisedButton(
+              child: Text("Enroll"),
+              onPressed: ()=>enrollCourse({'courseid': courseid}),
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
             );
           }
         );

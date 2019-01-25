@@ -41,6 +41,7 @@ class _LoginPageState extends State<LoginPage>{
       controller: t1,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+<<<<<<< HEAD
         border: OutlineInputBorder(
       ),
     )
@@ -48,12 +49,36 @@ class _LoginPageState extends State<LoginPage>{
 
     final password=TextFormField(
       obscureText: true,
+=======
+<<<<<<< HEAD
+        hintText: "email",
+=======
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(32.0)
+        )
+      ),
+    );
+
+    final password=TextFormField(
+<<<<<<< HEAD
+      obscureText: true,
+=======
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
       keyboardType: TextInputType.text,
       controller: t2,
       autofocus: false,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+<<<<<<< HEAD
         hintText: "password",
+=======
+<<<<<<< HEAD
+        hintText: "password",
+=======
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(32.0)
         )
@@ -68,10 +93,20 @@ class _LoginPageState extends State<LoginPage>{
           padding: EdgeInsets.only(left: 24.0, right: 24.0),
           children: <Widget>[
             logo,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
             Container(
               alignment: Alignment.center,
               child: Text("STUDENT", style:new TextStyle(fontSize: 25, color: Colors.blue), ),),
             SizedBox(height: 40.0,),
+<<<<<<< HEAD
+=======
+=======
+            SizedBox(height: 48.0,),
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
             username,
             SizedBox(height: 8.0,),
             password,

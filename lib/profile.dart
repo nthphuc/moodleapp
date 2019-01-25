@@ -21,7 +21,14 @@ class ProfilePageState extends State<ProfilePage> {
   final TextEditingController t2=new TextEditingController();
   final TextEditingController t3=new TextEditingController();
   final TextEditingController t4=new TextEditingController();
+<<<<<<< HEAD
   final TextEditingController t5=new TextEditingController();
+=======
+<<<<<<< HEAD
+  final TextEditingController t5=new TextEditingController();
+=======
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
 
   _getToken() async{
     SharedPreferences prefs =  await SharedPreferences.getInstance();
@@ -31,7 +38,15 @@ class ProfilePageState extends State<ProfilePage> {
   }
 
   static Client client_child = new Client(
+<<<<<<< HEAD
       endPoint: 'https://frozen-badlands-80400.herokuapp.com/graphql',
+=======
+<<<<<<< HEAD
+      endPoint: 'https://frozen-badlands-80400.herokuapp.com/graphql',
+=======
+      endPoint: 'https://polar-chamber-46934.herokuapp.com/graphql',
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
       cache: InMemoryCache(),
       apiToken: '',
     );
@@ -97,18 +112,40 @@ class ProfilePageState extends State<ProfilePage> {
             ),
             child: Padding(
               padding:
+<<<<<<< HEAD
                 const EdgeInsets.only(top: 10.0, left: 20.0, right: 20.0),
+=======
+<<<<<<< HEAD
+                const EdgeInsets.only(top: 10.0, left: 20.0, right: 20.0),
+=======
+                const EdgeInsets.only(top: 30.0, left: 20.0, right: 20.0),
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
               child: new Column(
                 children: <Widget>[
                   TextField(
                     controller: t1,
                     decoration: InputDecoration(
                       icon: Icon(
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
                         Icons.person,
                         color: Colors.black,
                       ),
                       border: InputBorder.none,
                       hintText: 'Fullname'
+<<<<<<< HEAD
+=======
+=======
+                        Icons.card_membership,
+                        color: Colors.black,
+                      ),
+                      border: InputBorder.none,
+                      hintText: 'ID'
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
                     ),
                     style: TextStyle(fontSize: 18.0, color: Colors.black),
                   ),
@@ -116,11 +153,25 @@ class ProfilePageState extends State<ProfilePage> {
                     controller: t2,
                     decoration: InputDecoration(
                       icon: Icon(
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
                         Icons.email,
                         color: Colors.black,
                       ),
                       border: InputBorder.none,
                       hintText: 'Email'
+<<<<<<< HEAD
+=======
+=======
+                        Icons.contacts,
+                        color: Colors.black,
+                      ),
+                      border: InputBorder.none,
+                      hintText: 'FullName'
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
                     ),
                     style: TextStyle(fontSize: 18.0, color: Colors.black),
                   ),
@@ -128,11 +179,25 @@ class ProfilePageState extends State<ProfilePage> {
                     controller: t3,
                     decoration: InputDecoration(
                       icon: Icon(
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
                         Icons.location_city,
                         color: Colors.black,
                       ),
                       border: InputBorder.none,
                       hintText: 'City'
+<<<<<<< HEAD
+=======
+=======
+                        Icons.email,
+                        color: Colors.black,
+                      ),
+                      border: InputBorder.none,
+                      hintText: 'Email'
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
                     ),
                     style: TextStyle(fontSize: 18.0, color: Colors.black),
                   ),
@@ -140,6 +205,10 @@ class ProfilePageState extends State<ProfilePage> {
                     controller: t4,
                     decoration: InputDecoration(
                       icon: Icon(
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
                         Icons.location_on,
                         color: Colors.black,
                       ),
@@ -153,6 +222,12 @@ class ProfilePageState extends State<ProfilePage> {
                     decoration: InputDecoration(
                       icon: Icon(
                         Icons.description,
+<<<<<<< HEAD
+=======
+=======
+                        Icons.perm_identity,
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
                         color: Colors.black,
                       ),
                       border: InputBorder.none,
@@ -160,6 +235,15 @@ class ProfilePageState extends State<ProfilePage> {
                     ),
                     style: TextStyle(fontSize: 18.0, color: Colors.black),
                   ),
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+                  SizedBox(
+                    height: 30.0,
+                  ),
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
                   Mutation(
                     UPDATE_USER,
                     builder: (
@@ -180,7 +264,15 @@ class ProfilePageState extends State<ProfilePage> {
                         elevation: 8.0,
                         shape: BeveledRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(7.0))),
+<<<<<<< HEAD
                         onPressed: () =>updateUser({'fullname':t1.text,'email':t2.text,'city':t3.text,'country':t4.text,'description':t5.text}),
+=======
+<<<<<<< HEAD
+                        onPressed: () =>updateUser({'fullname':t1.text,'email':t2.text,'city':t3.text,'country':t4.text,'description':t5.text}),
+=======
+                        onPressed: () =>updateUser({'userid':t1.text,'fullname':t2.text,'email':t3.text,'description':t4.text}),
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
                       );
                     }
                   ),
@@ -220,7 +312,15 @@ class ProfilePageState extends State<ProfilePage> {
             body: Container(
               width: 500.0,
               child: Padding(
+<<<<<<< HEAD
                 padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
+=======
+<<<<<<< HEAD
+                padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
+=======
+                padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
                 child: new Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
@@ -249,9 +349,20 @@ class ProfilePageState extends State<ProfilePage> {
                             Row(
                               children: <Widget>[
                                 Container(
+<<<<<<< HEAD
                                   child: Icon(Icons.perm_identity),
                                   alignment: Alignment.centerLeft,
                                   width: 50,
+=======
+<<<<<<< HEAD
+                                  child: Icon(Icons.perm_identity),
+                                  alignment: Alignment.centerLeft,
+                                  width: 50,
+=======
+                                  child: Text("User ID", style:TextStyle(fontSize: 18)),
+                                  width: 100,
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
                                 ),
                                 Expanded(
                                   child: Container(
@@ -268,9 +379,20 @@ class ProfilePageState extends State<ProfilePage> {
                             Row(
                               children: <Widget>[
                                 Container(
+<<<<<<< HEAD
                                   child: Icon(Icons.person),
                                   alignment: Alignment.centerLeft,
                                   width: 50,
+=======
+<<<<<<< HEAD
+                                  child: Icon(Icons.person),
+                                  alignment: Alignment.centerLeft,
+                                  width: 50,
+=======
+                                  child: Text("FullName", style:TextStyle(fontSize: 18)),
+                                  width: 100,
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
                                 ),
                                 Expanded(
                                   child: Container(
@@ -287,6 +409,10 @@ class ProfilePageState extends State<ProfilePage> {
                             Row(
                               children: <Widget>[
                                 Container(
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
                                   child: Icon(Icons.class_),
                                   alignment: Alignment.centerLeft,
                                   width: 50,
@@ -309,6 +435,13 @@ class ProfilePageState extends State<ProfilePage> {
                                   child: Icon(Icons.email),
                                   alignment: Alignment.centerLeft,
                                   width: 50,
+<<<<<<< HEAD
+=======
+=======
+                                  child: Text("Email", style:TextStyle(fontSize: 18)),
+                                  width: 100,
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
                                 ),
                                 Expanded(
                                   child: Container(
@@ -325,6 +458,10 @@ class ProfilePageState extends State<ProfilePage> {
                             Row(
                               children: <Widget>[
                                 Container(
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
                                   child: Icon(Icons.location_city),
                                   width: 50,
                                   alignment: Alignment.centerLeft,
@@ -366,6 +503,13 @@ class ProfilePageState extends State<ProfilePage> {
                                   child: Icon(Icons.description),
                                   alignment: Alignment.centerLeft,
                                   width: 50,
+<<<<<<< HEAD
+=======
+=======
+                                  child: Text("Description", style:TextStyle(fontSize: 18)),
+                                  width: 100,
+>>>>>>> ee802170704be7834bef40cb3fc226990f1252c5
+>>>>>>> 8e28c893b7044dc8be8006043af644f24315f0d4
                                 ),
                                 Expanded(
                                   child: Container(
